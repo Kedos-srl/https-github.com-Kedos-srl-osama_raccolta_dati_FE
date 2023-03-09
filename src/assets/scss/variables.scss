@@ -1,0 +1,52 @@
+
+/*
+
+---- Dark Theme Pablo ---
+  var(--bs-background)
+  var(--bs-card)
+  var(--bs-titleCard)
+
+---- Variabili Colore Bootstrap ----
+
+  var(--bs-primary)
+  var(--bs-secondary)
+  var(--bs-success)
+  var(--bs-info)
+  var(--bs-warning)
+  var(--bs-danger)
+  var(--bs-light)
+  var(--bs-dark)
+  
+  var(--bs-blue)
+  var(--bs-indigo)
+  var(--bs-purple)
+  var(--bs-pink)
+  var(--bs-red)
+  var(--bs-orange)
+  var(--bs-yellow)
+  var(--bs-green)
+  var(--bs-teal)
+  var(--bs-cyan)
+  var(--bs-wh)
+  var(--bs-gray)
+  var(--bs-gray-dark)
+
+*/
+
+
+$theme-colors: (
+  primary: #D07D79,
+  secondary: #4B887B,
+  success: #198754,
+  info: #0dcaf0,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #212529,
+
+  // Dark Theme Pablo
+
+  titleCard: #282828,
+  card: #1e1e1e,
+  background: #111111,
+);

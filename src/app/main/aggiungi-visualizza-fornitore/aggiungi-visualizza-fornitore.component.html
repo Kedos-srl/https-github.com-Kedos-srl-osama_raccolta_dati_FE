@@ -1,0 +1,330 @@
+<h2 class="titoloPagina">AGGIUNGI/VISUALIZZA FORNITORE</h2>
+
+<!-- Fornitore -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Fornitore</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Carica Biglietto Da visita</a>
+            <div class= "uploadPhoto bg-background">
+                <i (click)="photoBiglietto.click()"  class="fa-solid fa-camera fa-3x"></i>
+                <div style="border-left:2px solid var(--bs-card);height:90px;"></div>
+                <input #photoBiglietto hidden type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" (change)="onFileSelected($event)">
+                <div class="scrollFoto">
+                    <img (click)="openPopup()" class="foto" src="https://i.ibb.co/NynSdxB/biglietti-da-visita-2.png" alt="biglietti-da-visita-2" border="0">
+                    <img (click)="openPopup()" class="foto" src="https://i.ibb.co/f4MDnmQ/biglietti-da-visita-1.png" alt="biglietti-da-visita-1" border="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="contenitore">
+            <a>Ragione Sociale</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Tempo Sul Mercato</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Trading</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedTradings">
+                <ng-option *ngFor="let trading of tradings" [value]="trading.id">{{trading.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Fatturato Totale</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        
+        <div class="contenitore">
+            <a>Fatturato Totale in Italia</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Numero Dipendenti</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Ufficio R&D Interno</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedUfficioRD">
+                <ng-option *ngFor="let ufficioRD of ufficiRD" [value]="ufficioRD.id">{{ufficioRD.name}}</ng-option>
+            </ng-select>
+        </div>
+
+    </div>
+</div>
+
+<!-- Certificazioni / Test -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Certificazioni / Test</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Fabbrica</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedFabbriche">
+                <ng-option *ngFor="let fabbrica of fabbriche" [value]="fabbrica.id">{{fabbrica.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Materiali</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedMateriali">
+                <ng-option *ngFor="let materiale of materiali" [value]="materiale.id">{{materiale.name}}</ng-option>
+            </ng-select>
+        </div>
+
+    </div>
+</div>
+
+<!-- Country -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Country</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Area</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Città</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+    </div>
+</div>
+
+<!-- Contatto -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Contatto</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Nome</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Posizione</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+    </div>
+</div>
+
+<!-- Categoria Merceologica -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Categoria Merceologica</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Categoria</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedCategorie">
+                <ng-option *ngFor="let categoria of categorie" [value]="categoria.id">{{categoria.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Sottocategoria</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedSottocategorie">
+                <ng-option *ngFor="let sottocategoria of sottocategorie" [value]="sottocategoria.id">{{sottocategoria.name}}</ng-option>
+            </ng-select>
+        </div>
+
+    </div>
+</div>
+
+<!-- Prodotto -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Prodotto</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Carica Biglietto Da visita</a>
+            <div class= "uploadPhoto bg-background">
+                <i (click)="photoBiglietto.click()"  class="fa-solid fa-camera fa-3x"></i>
+                <div style="border-left:2px solid var(--bs-card);height:90px;"></div>
+                <input #photoBiglietto hidden type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" (change)="onFileSelected($event)">
+                <div class="scrollFoto">
+                    <img (click)="openPopup()" class="foto" src="https://i.ibb.co/NynSdxB/biglietti-da-visita-2.png" alt="biglietti-da-visita-2" border="0">
+                    <img (click)="openPopup()" class="foto" src="https://i.ibb.co/f4MDnmQ/biglietti-da-visita-1.png" alt="biglietti-da-visita-1" border="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="contenitore">
+            <a>Materiale</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedMaterialiProdotto">
+                <ng-option *ngFor="let materialeProdotto of materialiProdotto" [value]="materialeProdotto.id">{{materialeProdotto.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Dimensioni</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedDimensioni">
+                <ng-option *ngFor="let dimensione of dimensioni" [value]="dimensione.id">{{dimensione.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Moq</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedMoqs">
+                <ng-option *ngFor="let moq of moqs" [value]="moq.id">{{moq.name}}</ng-option>
+            </ng-select>
+        </div>
+
+        <div class="contenitore">
+            <a>Prezzo</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedPrezzi">
+                <ng-option *ngFor="let prezzo of prezzi" [value]="prezzo.id">{{prezzo.name}}</ng-option>
+            </ng-select>
+        </div>
+
+    </div>
+</div>
+
+<!-- Tempi Di Produzione -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Tempi di produzione</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Campioni</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="contenitore">
+            <a>Bulk production da CO</a>
+            <input type="text" class="form-control bg-background" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+    </div>
+</div>
+
+<!-- Modalità di pagamernto -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Modalità di pagamento</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <a>Campione</a>
+            <select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedCampioni">
+                <option *ngFor="let campione of campioni" [value]="campione.id">{{campione.name}}</option>
+            </select>
+        </div>
+
+        <div class="contenitore">
+            <a>Produzione</a>
+            <ng-select
+                class="custom"
+                appearance = outline
+                [(ngModel)]="selectedProduzioni">
+                <ng-option *ngFor="let produzione of produzioni" [value]="produzione.id">{{produzione.name}}</ng-option>
+            </ng-select>
+        </div>
+
+    </div>
+</div>
+
+<!-- Note -->
+<div class="card text-white bg-card">
+
+    <div class="card-header">
+        <h6 class="card-title">Note</h6>
+    </div>
+
+    <div class="card-body">
+
+        <div class="contenitore">
+            <textarea class="form-control bg-background" rows="5" id="note"></textarea>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modale Foto -->
+<div class="modal" tabindex="-1" role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <a title="Close"><i (click)="closePopup()" class="fa-solid fa-xmark modal-close"></i></a>
+        <div class="square"></div>
+        <a class="deletePhotoText" (click)="closePopup()"><i class="fa-regular fa-trash-can"></i> Elimina foto</a>
+        <div class="rectangle"></div>
+        <img class="modalfoto" src="https://i.ibb.co/NynSdxB/biglietti-da-visita-2.png" alt="biglietti-da-visita-2" border="0">
+      </div>
+    </div>
+  </div>
+</div>

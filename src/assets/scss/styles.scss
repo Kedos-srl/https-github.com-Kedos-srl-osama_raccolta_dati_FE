@@ -1,0 +1,135 @@
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+// SFONDO PAGINE
+body {
+  overflow-x: hidden;
+  background-color: var(--bs-background) !important;
+}
+
+.titoloPagina {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+// CARDS
+.card {
+  width: auto !important;
+  margin: 10px !important;
+}
+
+.card-header {
+  background-color: var(--bs-titleCard) !important;
+}
+
+hr.solid {
+  border-top: 2px solid #bbb;
+}
+
+.form-control {
+  color: white !important;
+  border: 0px;
+}
+
+.contenitore {
+  padding-bottom: 15px;
+}
+
+.ng-select .ng-select-container.ng-appearance-outline:after {
+  background-color: var(--bs-background) !important;
+}
+
+.ng-arrow {
+  z-index: 1;
+  color: white !important;
+}
+
+.ng-value {
+  z-index: 1;
+  color: white !important;
+}
+
+.ng-select {
+  padding-bottom: 0;
+}
+
+.ng-select.custom .ng-select-container  {            
+  min-height: 46px;
+  border-radius: 0;
+}
+
+.ng-select.ng-select-single .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+  bottom: 10px;
+}
+
+.ng-select .ng-select-container .ng-value-container {
+  padding: 0;
+}
+
+// MODALI ------------------------------------------------------------------------------
+.modal {
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  padding-top: 10VH;
+}
+
+.modal-body {
+  padding: 0% !important;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.square {
+  height: 25px;
+  width: 25px;
+  background-color: var(--bs-card);
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  border-radius: 0px 0px 0px 11px;
+  -webkit-border-radius: 0px 0px 0px 11px;
+  -moz-border-radius: 0px 0px 0px 11px;
+}
+
+.rectangle {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  position: absolute;
+  z-index: 0;
+  height: 25px;
+  width: 120px;
+  background-color: var(--bs-card);
+  border-radius: 12px 11px 0px 0px;
+-webkit-border-radius: 12px 11px 0px 0px;
+-moz-border-radius: 12px 11px 0px 0px;
+}
+
+.deletePhotoText {
+  color: white;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding: 5px;
+  color: white;
+}
+
+.modalfoto{
+  max-width: 100%;
+}
+
+// ---------------------------------------------------------------------------------
